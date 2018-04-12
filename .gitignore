@@ -5,3 +5,4 @@ installer.sh
 state_nvim.vim
 lol
 .cache/*
+.netrwhist
