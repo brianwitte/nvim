@@ -1,8 +1,10 @@
 # ignore everything
 # but
 cache_nvim
-installer.sh
 state_nvim.vim
-lol
+cache_vim
+state_vim.vim
 .cache/*
 .netrwhist
+repos/*
+installer.sh
