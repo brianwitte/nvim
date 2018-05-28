@@ -29,6 +29,8 @@ if dein#load_state('/home/walt/.config/nvim/')
   call dein#add('relaysix/Zenburn')
   call dein#add('morhetz/gruvbox')
   call dein#add('dracula/vim')
+  call dein#add('ajmwagar/vim-deus')
+  call dein#add('tyrannicaltoucan/vim-deep-space')
   call dein#add('itchyny/lightline.vim')
   call dein#add('scrooloose/nerdtree')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
@@ -73,7 +75,12 @@ set expandtab        " expand tabs to spaces
 set textwidth=120
 " turn syntax highlighting on
 set t_Co=256
-colorscheme dracula
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set background=dark " Setting dark mode
+colorscheme deep-space
+
 " turn line numbers on
 set number
 " highlight matching braces
@@ -81,7 +88,7 @@ set showmatch
 
 
 let g:lightline = {
-	\ 'colorscheme': 'wombat',
+	\ 'colorscheme': 'deepspace',
 	\ }
 
 let g:rbpt_colorpairs = [
@@ -99,11 +106,9 @@ let g:rbpt_colorpairs = [
     \ ['Darkblue',    'firebrick3'],
     \ ['darkgreen',   'RoyalBlue3'],
     \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
     \ ['red',         'firebrick3'],
     \ ]
 
-let g:haskell_classic_highlighting = 1
 let g:haskell_indent_if = 3
 let g:haskell_indent_case = 2
 let g:haskell_indent_let = 4
