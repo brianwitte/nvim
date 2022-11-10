@@ -15,7 +15,11 @@ if has('nvim') || has('termguicolors')
   set termguicolors
 endif
 
+<<<<<<< HEAD
 colorscheme dichromatic
+=======
+colorscheme jellybeans
+>>>>>>> update
 " setting transparancy same to terminal
 " hi normal guibg=000000
 
@@ -90,7 +94,7 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
-autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++17 % -o %:r -W<CR>
+autocmd filetype cpp nnoremap <F9> :w <bar> !clang++ -std=c++17 % -o %:r -Wall -g<CR>
 autocmd filetype cpp nnoremap <F10> :!%:r<CR>
 
 " No annoying sound on errors

@@ -5,7 +5,6 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
 Plug 'vim-scripts/ScrollColors'
 Plug 'kyazdani42/nvim-web-devicons'  
-Plug 'romainl/vim-dichromatic'
 
 " Layouts & Lines & Bars
 Plug 'itchyny/lightline.vim'
@@ -26,8 +25,8 @@ Plug 'alx741/vim-stylishask'
 Plug 'preservim/nerdcommenter' 
 Plug 'Chiel92/vim-autoformat'
 Plug 'ludovicchabant/vim-gutentags'
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'prabirshrestha/vim-lsp'
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
+Plug 'ziglang/zig.vim'
 
 " Utils
 Plug 'ctrlpvim/ctrlp.vim'
@@ -45,17 +44,11 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'metakirby5/codi.vim'
 
-" deoplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-clang'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+" coc nvim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 call plug#end()
-
-" deoplete conf
-source  ~/.config/nvim/deoplete_conf.vim
 
 " gutentags
 augroup MyGutentagsStatusLineRefresher
