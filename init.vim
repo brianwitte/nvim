@@ -15,11 +15,8 @@ if has('nvim') || has('termguicolors')
   set termguicolors
 endif
 
-<<<<<<< HEAD
-colorscheme dichromatic
-=======
 colorscheme jellybeans
->>>>>>> update
+
 " setting transparancy same to terminal
 " hi normal guibg=000000
 
