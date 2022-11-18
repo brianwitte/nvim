@@ -18,6 +18,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'rbgrouleff/bclose.vim'
 
+
 " Programming
 Plug 'majutsushi/tagbar' 
 Plug 'rhysd/vim-clang-format'
@@ -27,24 +28,26 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'ziglang/zig.vim'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'vim-ruby/vim-ruby'
 
 " Utils
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ap/vim-css-color' 
 Plug 'mileszs/ack.vim'
+Plug 'folke/which-key.nvim'
+Plug 'AndrewRadev/undoquit.vim'
+Plug 'rcarriga/nvim-notify'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'mhinz/vim-signify'
+Plug 'kdheepak/lazygit.nvim'
 
+Plug 'weizheheng/ror.nvim'
+Plug 'vim-test/vim-test'
+Plug 'tpope/vim-projectionist'
 
-" Previews
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-
-" Latex/ markdowns
-Plug 'lervag/vimtex'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'metakirby5/codi.vim'
-
-" coc nvim
+" co nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
@@ -91,51 +94,6 @@ nmap <leader>t  :CtrlPTag<cr>
 
 nmap <F3> :Autoformat<CR>
 
-
-" vim-markdown:
-let g:tex_conceal = ""
-" the default item indent is stupid
-let g:tex_indent_items=0
-
-let g:vim_markdown_math = 1
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_auto_insert_bullets = 0
-
-" This gets rid of the nasty _ italic bug in tpope's vim-markdown
-" block $$...$$
-syn region math start=/\$\$/ end=/\$\$/
-" inline math
-syn match math '\$[^$].\{-}\$'
-" actually highlight the region we defined as "math"
-hi link math Statement
-
-" Vim-live LAtex
-let g:livepreview_previewer = 'zathura'
-let g:livepreview_use_biber = 1
-
-" vim-markdown-preview
-let g:mkdp_open_to_the_world = 1
-let g:mkdp_browser = 'vimb'
-let g:mkdp_open_ip = '127.0.0.1'
-let g:mkdp_port = 6789
-let g:mkdp_browser = 'vimb'
-let g:mkdp_refresh_slow = 1
-let g:mkdp_preview_options = {
-    \ 'mkit': {},
-    \ 'katex': {},
-    \ 'uml': {},
-    \ 'maid': {},
-    \ 'disable_sync_scroll': 1,
-    \ 'sync_scroll_type': 'middle',
-    \ 'hide_yaml_meta': 1,
-    \ 'sequence_diagrams': {},
-    \ 'flowchart_diagrams': {},
-    \ 'content_editable': v:false,
-    \ 'disable_filename': 0
-    \ }
-
-
-" NERDCOMMENTER:
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
@@ -143,3 +101,4 @@ let g:NERDDefaultAlign = 'left'
 " Add your own custom formats or override the defaults
 let g:NERDCustomDelimiters = { 'c': { 'left': '/*','right': '*/' } }
 let g:NERDCustomDelimiters = { 'cpp': { 'left': '/*','right': '*/' } }
+

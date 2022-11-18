@@ -7,6 +7,19 @@
       "initializationOptions": {
         "cache": {
           "directory": ".ccls-cache"
+    "languageserver": {
+        "ccls": {
+            "command": "~/compiled/ccls/Release/ccls",
+            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+            "rootPatterns": [".ccls-root", "compile_commands.json"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": ".ccls-cache"
+                },
+                "client": {
+                    "snippetSupport": true
+                }
+            }
         },
         "client": {
           "snippetSupport": true
