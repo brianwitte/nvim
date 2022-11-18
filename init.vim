@@ -2,11 +2,7 @@
 syntax on
 source ~/.config/nvim/plugins.vim
 
-"CUSTOM SCRIPTS==================================
-source ~/.config/nvim/custom_scripts.vim
-
 "COLORS AND FONTS================================
-"
 
 set guifont=Source\ Code\ Pro
 let base16colorspace=256
