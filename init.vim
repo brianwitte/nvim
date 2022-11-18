@@ -108,6 +108,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 map <C-W> :Bclose <CR>
 
+" escape terminal mode
+tnoremap kj <C-\><C-n>
+
 " tag goto
 nnoremap <leader>g <C-]>
 
