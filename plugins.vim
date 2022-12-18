@@ -25,7 +25,6 @@ Plug 'rhysd/vim-clang-format'
 Plug 'alx741/vim-stylishask'
 Plug 'preservim/nerdcommenter' 
 Plug 'Chiel92/vim-autoformat'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'ziglang/zig.vim'
 Plug 'bfrg/vim-cpp-modern'
@@ -41,24 +40,15 @@ Plug 'rcarriga/nvim-notify'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'mhinz/vim-signify'
-Plug 'kdheepak/lazygit.nvim'
 
 Plug 'weizheheng/ror.nvim'
 Plug 'vim-test/vim-test'
 Plug 'tpope/vim-projectionist'
 
-" co nvim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 call plug#end()
 
-" gutentags
-augroup MyGutentagsStatusLineRefresher
-    autocmd!
-    autocmd User GutentagsUpdating call lightline#update()
-    autocmd User GutentagsUpdated call lightline#update()
-augroup END
 
 " Ack
 let g:ackprg = 'ag --vimgrep'
