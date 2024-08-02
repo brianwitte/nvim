@@ -7,8 +7,9 @@ Plug 'vim-scripts/ScrollColors'
 Plug 'kyazdani42/nvim-web-devicons'  
 
 " Layouts & Lines & Bars
-Plug 'itchyny/lightline.vim'
+Plug 'hoob3rt/lualine.nvim'
 Plug 'bling/vim-bufferline'
+Plug 'rktjmp/lush.nvim'
 
 " Misc
 Plug 'tweekmonster/startuptime.vim'
@@ -38,7 +39,7 @@ Plug 'folke/which-key.nvim'
 Plug 'AndrewRadev/undoquit.vim'
 Plug 'rcarriga/nvim-notify'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 Plug 'mhinz/vim-signify'
 
 Plug 'weizheheng/ror.nvim'
@@ -55,9 +56,6 @@ let g:ackprg = 'ag --vimgrep'
 
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_quickfix_mode=1
-
-"" lightline: 
-source ~/.config/nvim/lightline_conf.vim
 
 "" Bufferline
 let g:bufferline_echo = 0

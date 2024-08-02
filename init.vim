@@ -2,20 +2,20 @@
 syntax on
 source ~/.config/nvim/plugins.vim
 
-"COLORS AND FONTS================================
+"" COLORS AND FONTS================================
 
 set guifont=Source\ Code\ Pro
 let base16colorspace=256
 set t_Co=256
-" set background=dark
+"" set background=dark
 if has('nvim') || has('termguicolors')
   set termguicolors
 endif
 
-colorscheme jellybeans
+colorscheme jellybeans-nvim
 
-" setting transparancy same to terminal
-" hi normal guibg=000000
+"" setting transparancy same to terminal
+"" hi normal guibg=000000
 
 "VISUALS AND UI==================================
 set wildmenu
@@ -31,9 +31,9 @@ set ruler
 set cmdheight=1
 set hid
 set backspace=eol,start,indent
-set lazyredraw 
+set lazyredraw
 set magic
-set showmatch 
+set showmatch
 set mat=2
 
 "BEHAVIOURS======================================
@@ -44,10 +44,10 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch 
-" :W sudo saves the file 
+" :W sudo saves the file
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-let $LANG='en' 
+let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -134,7 +134,6 @@ map <silent> <leader><cr> :noh<cr>
 
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
@@ -172,6 +171,34 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 
-lua require("mappings").setup()
-lua require('plugins.ror').setup()
+" lualine setup
+lua << EOF
+require('lualine').setup {
+  options = {
+    theme = 'jellybeans',
+    section_separators = {'', ''},
+    component_separators = {'', ''},
+    icons_enabled = true,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
+}
+EOF
 
+lua require("mappings").setup()
